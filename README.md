@@ -6,25 +6,19 @@
 
 ### CONTENTS:
 
-<ol>
-<li>1.0 Tree structure</li>
-<li>2.0 Getting started with design</li>
-  <ol>
-  <li>2.1 Using modules</li>
-  <li>2.2 Adding your own code</li>
-  <li>2.3 Overriding library code</li>
-  <li>2.4 Coregen</li>
-  </ol>
-<li>3.0 Environment setup</li>
-<li>4.0 Simulation</li>
-<li>5.0 Implementation</li>
-<li>6.0 Running the hardware</li>
-  <ol>
-  <li>6.1 Kernel Driver</li>
-  <li>6.2 Download</li>
-  </ol>
-<li>7.0 Contacts</li>
-</ol>
+1. Tree structure
+2. Getting started with design
+    1. Using modules
+    2. Adding your own code
+    3. Overriding library code
+    4. Coregen
+3. Environment setup
+4. Simulation
+5. Implementation
+6. Running the hardware
+    1. Kernel Driver
+    2. Download
+7. Contacts
 
 ### 1.0 Tree structure
 -----------------------------------------------------------------------
