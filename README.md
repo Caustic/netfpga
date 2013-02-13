@@ -1,5 +1,7 @@
-## Author: Jad Naous <first initial last name at stanford period edu>
-## Description: Quick intro to NetFPGA
+# NetFPGA
+
+### Author: Jad Naous <first initial last name at stanford period edu>
+### Description: Quick intro to NetFPGA
 -----------------------------------------------------------------------
 
 ### CONTENTS:
@@ -209,6 +211,7 @@ for tools to use to interact with real hardware.
 -----------------------------------------------------------------------
 
 Public discussion forums: http://netfpga.org/forums/
+
 Direct e-mail:            info@netfpga.org
 
 Web:                      http://netfpga.org/
