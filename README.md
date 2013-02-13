@@ -5,31 +5,31 @@
 -----------------------------------------------------------------------
 
 ### CONTENTS:
-1\.0 Tree structure
+1.0 Tree structure
 
-2\.0 Getting started with design
+2.0 Getting started with design
 
-  2\.1 Using modules
+  2.1 Using modules
 
-  2\.2 Adding your own code
+  2.2 Adding your own code
 
-  2\.3 Overriding library code
+  2.3 Overriding library code
 
-  2\.4 Coregen
+  2.4 Coregen
 
-3\.0 Environment setup
+3.0 Environment setup
 
-4\.0 Simulation
+4.0 Simulation
 
-5\.0 Implementation
+5.0 Implementation
 
-6\.0 Running the hardware
+6.0 Running the hardware
 
-  6\.1 Kernel Driver
+  6.1 Kernel Driver
 
-  6\.2 Download
+  6.2 Download
 
-7\.0 Contacts
+7.0 Contacts
 
 ### 1.0 Tree structure
 -----------------------------------------------------------------------
