@@ -1,13 +1,12 @@
-
-if [ "$NF_ROOT" == "" ]; then
-  export NF_ROOT=${HOME}/netfpga
+if [[ -z "$NF_ROOT" || "$NF_ROOT" == "" ]]; then
+  export NF_ROOT=`pwd`
 fi
 
-if [ "$NF_DESIGN_DIR" == "" ]; then
+if [[ -z "$NF_DESIGN_DIR" || "$NF_DESIGN_DIR" == "" ]]; then
   export NF_DESIGN_DIR=${NF_ROOT}/projects/reference_nic
 fi
 
-if [ "$NF_WORK_DIR" == "" ]; then
+if [[ -z "$NF_WORK_DIR" || "$NF_WORK_DIR" == "" ]]; then
   export NF_WORK_DIR=/tmp/${USER}
 fi
 
