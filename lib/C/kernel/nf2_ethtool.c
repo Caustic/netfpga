@@ -96,7 +96,7 @@ static const struct ethtool_ops nf2_ethtool_ops = {
 	.set_settings		= nf2_set_settings,
 	.get_drvinfo		= nf2_get_drvinfo,
 	.get_link		= ethtool_op_get_link,
-	.phys_id		= nf2_phys_id,
+	//.phys_id		= nf2_phys_id,
 };
 
 void nf2_set_ethtool_ops(struct net_device *dev)

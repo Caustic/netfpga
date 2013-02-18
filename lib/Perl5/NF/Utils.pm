@@ -30,7 +30,11 @@ sub log2 {
   my $n = shift;
 
   my $ret;
-  eval { $ret = log($n) / log(2); };
+  if (ref($n) eq 'Math::BigInt') {
+    eval { $ret = $n->blog(2, 100); };
+  } else {
+    eval { $ret = log($n) / log(2); };
+  }
   if ($@ ne '') {
     my $err = $@;
     chomp($err);
