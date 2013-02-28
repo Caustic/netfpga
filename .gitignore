@@ -3,3 +3,8 @@
 synth/*
 !synth/Makefile
 *.ngc
+*.ko
+*.so
+*.ngo
+*.pyc
+*.a

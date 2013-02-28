@@ -271,7 +271,7 @@
       end // else: !if(reset)
       // synthesis translate_off
       if(store_state_next == ST_DROP_PKT) begin
-         $display("%t %m WARNING: output queue %u is full. Pkt is being dropped.", $time, dst_oq);
+         $display("%t %m WARNING: output queue %d is full. Pkt is being dropped.", $time, dst_oq);
       end
       // synthesis translate_on
    end // always @ (posedge clk)
