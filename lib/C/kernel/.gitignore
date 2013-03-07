@@ -1,2 +1,5 @@
 .*
 !.gitignore
+Module.symvers
+modules.order
+nf2.mod.c
