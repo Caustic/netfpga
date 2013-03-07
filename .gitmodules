@@ -1,0 +1,3 @@
+[submodule "projects/openflow"]
+	path = projects/openflow
+	url = git@github.com:Caustic/openflow-netfpga.git
