@@ -10,6 +10,6 @@
 *.pyc
 reg_defines_*.h
 reg_defines_*.pm
-register.v
+registers.v
 *.so
 .*.swp
