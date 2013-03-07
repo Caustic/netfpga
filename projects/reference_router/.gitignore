@@ -2,3 +2,4 @@
 *.o
 synth/*
 !synth/Makefile
+lib/*/reg_defines_*.*
