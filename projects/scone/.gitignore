@@ -1,1 +1,7 @@
+*.bit
+*.o
+synth/*
+!synth/Makefile
 lib/*/reg_defines_*.*
+scone
+reg_defines*.*

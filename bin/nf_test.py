@@ -557,6 +557,9 @@ def printScriptOutput(result, output):
 
 ####### method calls
 
+#Leaving this here so I remember it
+import pdb; pdb.set_trace()
+
 handleArgs()
 identifyRoot()
 global_run = rootDir + '/lib/scripts/verif_run/pyrun.pl'

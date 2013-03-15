@@ -5,3 +5,4 @@ synth/*
 lib/*/reg_defines_*.*
 show_stats
 regdump
+cli

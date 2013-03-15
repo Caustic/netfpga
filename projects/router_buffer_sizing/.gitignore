@@ -1,1 +1,8 @@
+*.bit
+*.o
+synth/*
+!synth/Makefile
 lib/*/reg_defines_*.*
+*RouterLib.py
+monitor_ctrl
+rcv_evts

@@ -3,3 +3,4 @@
 synth/*
 !synth/Makefile
 lib/*/reg_defines_*.*
+counterdump

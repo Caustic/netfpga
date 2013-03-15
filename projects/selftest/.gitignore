@@ -1,1 +1,8 @@
+*.bit
+*.o
+synth/*
+!synth/Makefile
 lib/*/reg_defines_*.*
+bad_pkt_dump
+selftest
+src_coregen/
