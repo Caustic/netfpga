@@ -13,16 +13,16 @@
     core/input_arbiter/rr_input_arbiter
     core/nf2/generic_top
     core/nf2/reference_core
-    core/output_queues/sram_rr_output_queues
     core/sram_arbiter/sram_weighted_rr
     core/user_data_path/reference_user_data_path
+    core/output_queues/sram_rr_output_queues
+    core/user_data_path/udp_reg_master
     core/io/mdio
     core/cpci_bus
     core/dma
-    core/user_data_path/udp_reg_master
     core/io_queues/add_rm_hdr
-    core/utils
     core/utils/generic_regs
+    core/utils
   </nf:use_modules>
   <nf:memalloc layout="reference">
     <nf:group name="core1">
@@ -34,6 +34,7 @@
     </nf:group>
     <nf:group name="udp">
       <nf:instance name="in_arb" />
+      <nf:instance name="header_parser" />
       <nf:instance name="output_port_lookup" />
       <nf:instance name="output_queues" />
     </nf:group>
