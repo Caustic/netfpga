@@ -1,5 +1,5 @@
 if [[ -z "$NF_ROOT" || "$NF_ROOT" == "" ]]; then
-  export NF_ROOT=`pwd`
+  export NF_ROOT="/home/abraithwaite/netfpga"
 fi
 
 if [[ -z "$NF_DESIGN_DIR" || "$NF_DESIGN_DIR" == "" ]]; then
