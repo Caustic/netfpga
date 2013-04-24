@@ -206,6 +206,8 @@ module user_data_path
    wire [`UDP_REG_ADDR_WIDTH-1:0]   hdr_in_reg_addr;
    wire [`CPCI_NF2_DATA_WIDTH-1:0]  hdr_in_reg_data;
    wire [UDP_REG_SRC_WIDTH-1:0]     hdr_in_reg_src;
+   wire [`OF_HEADER_REG_WIDTH-1:0]  hdr_out_header_bus;
+   wire                             hdr_out_headers_valid;
 
    //------- output port lut wires/regs ------
    wire [CTRL_WIDTH-1:0]            op_lut_in_ctrl;
@@ -328,7 +330,9 @@ module user_data_path
      .in_data              (op_lut_in_data),
      .in_ctrl              (op_lut_in_ctrl),
      .in_wr                (op_lut_in_wr),
-     .in_rdy               (), // Only testing this module
+
+     .header_bus           (hdr_out_header_bus),
+     .headers_valid        (hdr_out_headers_valid),
 
       // --- Register interface
      .reg_req_in           (hdr_in_reg_req),
@@ -347,7 +351,23 @@ module user_data_path
 
       // --- Misc
      .clk                  (clk),
-     .reset                (reset));
+     .reset                (reset)
+   );
+
+   matcher
+   #(
+      .DATA_WIDTH(DATA_WIDTH),
+      .CTRL_WIDTH(CTRL_WIDTH),
+      .UDP_REG_SRC_WIDTH(UDP_REG_SRC_WIDTH)
+   )
+   matcher
+   (
+      .header_bus           (hdr_out_header_bus),
+      .headers_valid        (hdr_out_headers_valid),
+   
+      .reset                (reset),
+      .clk                  (clk)
+   );
 
    output_port_lookup
      #(.DATA_WIDTH(DATA_WIDTH),

@@ -35,6 +35,7 @@
     <nf:group name="udp">
       <nf:instance name="in_arb" />
       <nf:instance name="header_parser" />
+      <nf:instance name="matcher" />
       <nf:instance name="output_port_lookup" />
       <nf:instance name="output_queues" />
     </nf:group>
