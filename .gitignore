@@ -13,3 +13,5 @@ reg_defines_*.pm
 registers.v
 *.so
 .*.swp
+builders
+modelsim

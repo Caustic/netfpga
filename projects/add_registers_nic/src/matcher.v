@@ -86,7 +86,9 @@ module matcher
    #(
       .CMP_WIDTH(`OF_HEADER_REG_WIDTH),
       .DATA_WIDTH(`OF_ACTION_DATA_WIDTH + `OF_ACTION_CTRL_WIDTH),
-      .LUT_DEPTH(32)
+      .TAG(`MATCHER_BLOCK_ADDR),
+      .LUT_DEPTH(`OF_NUM_ENTRIES),
+      .REG_ADDR_WIDTH(`MATCHER_REG_ADDR_WIDTH)
    )
    unencoded_cam_lut_sm
    (
@@ -150,6 +152,7 @@ module matcher
             .clk              (clk)
          );
 
+         // 32 from CAM size
          if (i == MATCHER_NUM_WORDS - 1) begin
             assign cam_din_itr[i] = cam_din[`OF_HEADER_REG_WIDTH - 1: 32*i];
             assign cam_data_mask_itr[i] = cam_din[`OF_HEADER_REG_WIDTH - 1: 32*i];
