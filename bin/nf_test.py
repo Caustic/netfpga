@@ -558,7 +558,7 @@ def printScriptOutput(result, output):
 ####### method calls
 
 #Leaving this here so I remember it
-import pdb; pdb.set_trace()
+#import pdb; pdb.set_trace()
 
 handleArgs()
 identifyRoot()

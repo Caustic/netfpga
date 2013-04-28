@@ -209,6 +209,14 @@ module user_data_path
    wire [`OF_HEADER_REG_WIDTH-1:0]  hdr_out_header_bus;
    wire                             hdr_out_headers_valid;
 
+   // ----------- matcher reg bus -----------
+   wire                             mchr_in_reg_req;
+   wire                             mchr_in_reg_ack;
+   wire                             mchr_in_reg_rd_wr_L;
+   wire [`UDP_REG_ADDR_WIDTH-1:0]   mchr_in_reg_addr;
+   wire [`CPCI_NF2_DATA_WIDTH-1:0]  mchr_in_reg_data;
+   wire [UDP_REG_SRC_WIDTH-1:0]     mchr_in_reg_src;
+
    //------- output port lut wires/regs ------
    wire [CTRL_WIDTH-1:0]            op_lut_in_ctrl;
    wire [DATA_WIDTH-1:0]            op_lut_in_data;
@@ -327,31 +335,31 @@ module user_data_path
    header_parser
    (
       // --- Interface to the rx input queues
-     .in_data              (op_lut_in_data),
-     .in_ctrl              (op_lut_in_ctrl),
-     .in_wr                (op_lut_in_wr),
+      .in_data              (op_lut_in_data),
+      .in_ctrl              (op_lut_in_ctrl),
+      .in_wr                (op_lut_in_wr),
 
-     .header_bus           (hdr_out_header_bus),
-     .headers_valid        (hdr_out_headers_valid),
+      .header_bus           (hdr_out_header_bus),
+      .headers_valid        (hdr_out_headers_valid),
 
-      // --- Register interface
-     .reg_req_in           (hdr_in_reg_req),
-     .reg_ack_in           (hdr_in_reg_ack),
-     .reg_rd_wr_L_in       (hdr_in_reg_rd_wr_L),
-     .reg_addr_in          (hdr_in_reg_addr),
-     .reg_data_in          (hdr_in_reg_data),
-     .reg_src_in           (hdr_in_reg_src),
+       // --- Register interface
+      .reg_req_in           (hdr_in_reg_req),
+      .reg_ack_in           (hdr_in_reg_ack),
+      .reg_rd_wr_L_in       (hdr_in_reg_rd_wr_L),
+      .reg_addr_in          (hdr_in_reg_addr),
+      .reg_data_in          (hdr_in_reg_data),
+      .reg_src_in           (hdr_in_reg_src),
 
-     .reg_req_out          (op_lut_in_reg_req),
-     .reg_ack_out          (op_lut_in_reg_ack),
-     .reg_rd_wr_L_out      (op_lut_in_reg_rd_wr_L),
-     .reg_addr_out         (op_lut_in_reg_addr),
-     .reg_data_out         (op_lut_in_reg_data),
-     .reg_src_out          (op_lut_in_reg_src),
+      .reg_req_out          (mchr_in_reg_req),
+      .reg_ack_out          (mchr_in_reg_ack),
+      .reg_rd_wr_L_out      (mchr_in_reg_rd_wr_L),
+      .reg_addr_out         (mchr_in_reg_addr),
+      .reg_data_out         (mchr_in_reg_data),
+      .reg_src_out          (mchr_in_reg_src),
 
-      // --- Misc
-     .clk                  (clk),
-     .reset                (reset)
+       // --- Misc
+      .clk                  (clk),
+      .reset                (reset)
    );
 
    matcher
@@ -364,7 +372,21 @@ module user_data_path
    (
       .header_bus           (hdr_out_header_bus),
       .headers_valid        (hdr_out_headers_valid),
-   
+      
+      .reg_req_in           (mchr_in_reg_req),
+      .reg_ack_in           (mchr_in_reg_ack),
+      .reg_rd_wr_L_in       (mchr_in_reg_rd_wr_L),
+      .reg_addr_in          (mchr_in_reg_addr),
+      .reg_data_in          (mchr_in_reg_data),
+      .reg_src_in           (mchr_in_reg_src),
+
+      .reg_req_out          (op_lut_in_reg_req),
+      .reg_ack_out          (op_lut_in_reg_ack),
+      .reg_rd_wr_L_out      (op_lut_in_reg_rd_wr_L),
+      .reg_addr_out         (op_lut_in_reg_addr),
+      .reg_data_out         (op_lut_in_reg_data),
+      .reg_src_out          (op_lut_in_reg_src),
+
       .reset                (reset),
       .clk                  (clk)
    );
